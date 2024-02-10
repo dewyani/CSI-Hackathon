@@ -16,7 +16,7 @@ const MyComplaints = (props) => {
             </div>
 
             <div class="w-3/4">
-                <div className="font-bold text-xl text-gray-400 m-10">Current Account : jsbb/uniuggvcliddyfivfs;ozufgjv</div>
+                <div className="font-bold text-xl text-gray-400 m-10">Current Account : {props.account}</div>
                 <div class="flex gap-4">
                     <div class="w-1/2">
                         <div className="flex-col space-y-2">
