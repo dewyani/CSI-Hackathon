@@ -5,11 +5,16 @@ import SearchBar from "./SearchBar";
 import { Table, Button } from "flowbite-react";
 import { useState } from "react";
 
-const Timeline = () => {
+const Timeline = ({ comp, update }) => {
   const [buttonText, setButtonText] = useState("Under Review");
   const [buttonColor, setButtonColor] = useState("yellow");
+  // const compArray = comp.comp[0];
+  // console.log(compArray());
+  console.log(update());
 
   const handleClick = () => {
+    update();
+    // console.log(update());
     setButtonText("Resolved");
     setButtonColor("green");
   };
