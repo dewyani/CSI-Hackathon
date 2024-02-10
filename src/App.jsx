@@ -21,6 +21,7 @@ function App() {
     contract: null,
   });
   const [account, setAccount] = useState("Not connected");
+
   useEffect(() => {
     const template = async () => {
       const contractAddress = "0x9158544C4d160778aa8AB003F6421365da6e64D1";
@@ -52,6 +53,28 @@ function App() {
     template();
   }, []);
 
+  // Function to register a complaint
+  const registerComplaint = async (name, email, addr, mobile, description) => {
+    try {
+      await state.contract.Register(name, email, addr, mobile, description);
+      console.log("Complaint registered successfully.");
+    } catch (error) {
+      console.error("Error registering complaint:", error);
+      alert("Error registering complaint. Please try again later.");
+    }
+  };
+
+  // Function to update complaint status
+  const updateComplaintStatus = async () => {
+    try {
+      await state.contract.UpdateStatus();
+      console.log("Complaint status updated successfully.");
+    } catch (error) {
+      console.error("Error updating complaint status:", error);
+      alert("Error updating complaint status. Please try again later.");
+    }
+  };
+
   return (
     <>
       <Routes>
@@ -64,9 +87,13 @@ function App() {
           path="/dashboard_User/myComplaints"
           element={<MyComplaints state={account} />}
         />
+        {/* register={registerComplaint} */}
         <Route path="/dashboard_User/lodge" element={<LodgeComplaints />} />
         <Route path="/dashboard_Agency/stats" element={<Statistics />} />
-        <Route path="/dashboard_Agency/timeline" element={<Timeline />} />
+        <Route
+          path="/dashboard_Agency/timeline"
+          element={<Timeline update={() => updateComplaintStatus()} />}
+        />
       </Routes>
     </>
   );

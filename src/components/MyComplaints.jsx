@@ -6,13 +6,12 @@ import { useState } from "react";
 import { HiArrowNarrowRight, HiCalendar } from "react-icons/hi";
 import MyCard from "./MyCard";
 
-const MyComplaints = (props) => {
+const MyComplaints = ({ state }) => {
   const [openModal, setOpenModal] = useState(false);
-  console.log(props.state[0]);
   return (
     <div className="flex">
       <SidebarPage />
-      <div className="justify-center">Current Account : {props.state[0]}</div>
+      <div className="justify-center">Current Account : {state[0]}</div>
       <div className="flex-col m-10 space-y-2">
         <div className="font-bold text-xl text-gray-400">In Progress</div>
         <MyCard />
