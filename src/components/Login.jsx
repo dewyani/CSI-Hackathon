@@ -25,8 +25,8 @@ const Login = () => {
             </p>
 
             <div className="flex justify-center items-center mx-auto ">
-              <Button gradientDuoTone="purpleToBlue"><a href="/signup" className="nodecor">
-                Login 
+              <Button gradientDuoTone="purpleToBlue"><a href="/signup" className="nodecor font-bold">
+                Register Here 
               </a></Button>
             </div>
 
