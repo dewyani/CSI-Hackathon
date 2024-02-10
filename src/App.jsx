@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    <div className='text-blue-500'>hjnkjagsrn</div>
+    {/* <div className='text-blue-500'>hjnkjagsrn</div> */}
 
     <Routes>
       <Route path="/login" element ={<Login/>}/>
