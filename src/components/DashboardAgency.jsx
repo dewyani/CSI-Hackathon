@@ -1,10 +1,10 @@
 import React from 'react'
-import SidebarPage from './SidebarPage'
+import SideBarAgency from './SideBarAgency'
 
 const DashboardAgency = () => {
     return (
         <div>
-          <SidebarPage/>
+          <SideBarAgency/>
         </div>
     )
 }

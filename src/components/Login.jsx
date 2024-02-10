@@ -25,7 +25,9 @@ const Login = () => {
             </p>
 
             <div className="flex justify-center items-center mx-auto ">
-              <Button gradientDuoTone="purpleToBlue">Login</Button>
+              <Button gradientDuoTone="purpleToBlue"><a href="/signup" className="nodecor">
+                Login 
+              </a></Button>
             </div>
 
             <div className="flex w-full md:justify-start justify-center items-end">
