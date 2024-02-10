@@ -1,144 +1,83 @@
-import React, { useState } from 'react'
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import {toast} from "react-hot-toast"
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
-
-const Signup = ({setIsLoggedIn}) => {
-    const navigate = useNavigate();
-
-    const [formData, setFormData] = useState({
-        firstName:"",
-        lastName:"",
-        email:"",
-        password:"",
-        confirmPassword:""
-    })
-
-    const [showPassword, setShowPassword] = useState(false);
-
-    function changeHandler(event) {
-
-        setFormData( (prevData) =>(
-            {
-                ...prevData,
-                [event.target.name]:event.target.value
-            }
-        ) )
-
-    }
-
-    function submitHandler(event) {
-        event.preventDefault();
-        if(formData.password != formData.confirmPassword) {
-            toast.error("Passwords do not match");
-            return ;
-        }
-
-        setIsLoggedIn(true);
-        toast.success("Account Created");
-        const accountData = {
-            ...formData
-        };
-        console.log("printing account data ");
-        console.log(accountData);
-
-        navigate("/dashboard");
-
-    }
-
-
+const Signup = () => {
   return (
-    <div>
-        {/* student-Instructor tab */}
-        <div>
-            <button>
-                Student
-            </button>
-            <button>
-                Instructor
-            </button>
+    <section className="bg-gray-50 dark:bg-gray-900">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+          <img className="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" />
+          Flowbite    
+        </a>
+        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              Create an account
+            </h1>
+            <form className="space-y-4 md:space-y-6" action="#">
+              <div>
+                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="••••••••"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="confirm-password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
+                <input
+                  type="password"
+                  name="confirm-password"
+                  id="confirm-password"
+                  placeholder="••••••••"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div className="flex items-start">
+                <div className="flex items-center h-5">
+                  <input
+                    id="terms"
+                    aria-describedby="terms"
+                    type="checkbox"
+                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                    required
+                  />
+                </div>
+                <div className="ml-3 text-sm">
+                  <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">
+                    I accept the <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a>
+                  </label>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              >
+                Create an account
+              </button>
+              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                Already have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
+              </p>
+            </form>
+          </div>
         </div>
+      </div>
+    </section>
+  );
+};
 
-        <form onSubmit={submitHandler}>
-        {/* first name and lastName */}
-            <div>
-                    <label>
-                        <p>First Name<sup>*</sup></p>
-                        <input
-                            required
-                            type="text"
-                            name="firstName"
-                            onChange={changeHandler}
-                            placeholder="Enter First Name"
-                            value={formData.firstName}
-                        />
-                    </label>
-
-                    <label>
-                        <p>Last Name<sup>*</sup></p>
-                        <input
-                            required
-                            type="text"
-                            name="lastName"
-                            onChange={changeHandler}
-                            placeholder="Enter Last Name"
-                            value={formData.lastName}
-                        />
-                    </label>
-            </div>
-            {/* email Add */}
-            <label>
-                    <p>Email Address<sup>*</sup></p>
-                    <input
-                        required
-                        type="email"
-                        name="email"
-                        onChange={changeHandler}
-                        placeholder="Enter Email Address "
-                        value={formData.email}
-                    />
-            </label>
-
-            {/* createPassword and Confirm Password */}
-            <div>
-                <label>
-                    <p>Create Password<sup>*</sup></p>
-                    <input
-                        required
-                        type= {showPassword ? ("text") : ("password")}
-                        name="password"
-                        onChange={changeHandler}
-                        placeholder="Enter Password"
-                        value={formData.password}
-                    />
-                    <span onClick={() => setShowPassword((prev) => !prev)}>
-                        {showPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}
-                    </span>
-                </label>
-
-                <label>
-                    <p>Confirm Password<sup>*</sup></p>
-                    <input
-                        required
-                        type= {showPassword ? ("text") : ("password")}
-                        name="confirmPassword"
-                        onChange={changeHandler}
-                        placeholder="Confirm Password"
-                        value={formData.confirmPassword}
-                    />
-                    <span onClick={() => setShowPassword((prev) => !prev)}>
-                        {showPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}
-                    </span>
-                </label>
-            </div>
-        <button>
-            Create Account
-        </button>
-        </form>
-
-    </div>
-  )
-}
-
-export default SignupForm
+export default SignUpForm;

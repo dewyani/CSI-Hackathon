@@ -12,8 +12,6 @@ function App() {
   return (
     <>
     <div className='text-blue-500'>hjnkjagsrn</div>
-    
-    <Signup>This is</Signup>
 
     <Routes>
       <Route path="/login" element ={<Login/>}/>
