@@ -56,6 +56,7 @@ function App() {
   // Function to register a complaint
   const registerComplaint = async (name, email, addr, mobile, description) => {
     try {
+      console(state.contract);
       await state.contract.Register(name, email, addr, mobile, description);
       console.log("Complaint registered successfully.");
     } catch (error) {
@@ -87,13 +88,12 @@ function App() {
           path="/dashboard_User/myComplaints"
           element={<MyComplaints state={account} />}
         />
-        {/* register={registerComplaint} */}
-        <Route path="/dashboard_User/lodge" element={<LodgeComplaints />} />
-        <Route path="/dashboard_Agency/stats" element={<Statistics />} />
         <Route
-          path="/dashboard_Agency/timeline"
-          element={<Timeline update={() => updateComplaintStatus()} />}
+          path="/dashboard_User/lodge"
+          element={<LodgeComplaints register={registerComplaint} />}
         />
+        <Route path="/dashboard_Agency/stats" element={<Statistics />} />
+        <Route path="/dashboard_Agency/timeline" element={<Timeline />} />
       </Routes>
     </>
   );

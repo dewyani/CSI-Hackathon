@@ -4,8 +4,8 @@ import SideBarAgency from "./SideBarAgency";
 import SearchBar from "./SearchBar";
 import { Table } from "flowbite-react";
 
-const Timeline = ({ update }) => {
-  console.log(update);
+const Timeline = () => {
+  // console.log(update);
   return (
     <div className="flex">
       <SideBarAgency />
