@@ -1,10 +1,9 @@
 import React from 'react'
 
 const DashboardUser = () => {
-    return (
-        <>
-        </>
-    )
+  return (
+    <div>DashboardUser</div>
+  )
 }
 
 export default DashboardUser
