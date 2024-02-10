@@ -2,11 +2,29 @@ import React from "react";
 import SidebarPage from "./SidebarPage";
 import { FileInput, Label, Textarea } from "flowbite-react";
 import { Button, Checkbox, TextInput } from "flowbite-react";
+import { useState } from "react";
 
-const LodgeComplaints = ({ register }) => {
-  const handleSubmit = () => {
-    register();
+const LodgeComplaints = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    sub: "",
+    ACnO: "",
+    comment: "",
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form submitted with data:", formData);
+    alert("Form submitted successfully !");
   };
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <div className="flex">
       <SidebarPage />
@@ -16,34 +34,59 @@ const LodgeComplaints = ({ register }) => {
         </div>
         <div className="flex w-screen">
           <div className="w-1/3 px-10">
-            <form className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <div>
                 <div className="mb-2 block">
-                  <Label htmlFor="name" value="Agency Name" />
+                  <Label htmlFor="sub" value="Agency Name" />
                 </div>
-                <TextInput id="name" type="text" required />
+                <TextInput
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
               </div>
+
               <div>
                 <div className="mb-2 block">
                   <Label htmlFor="sub" value="Complaint Subject" />
                 </div>
-                <TextInput id="sub" type="text" required />
-              </div>
-              <div className="max-w-md">
-                <div className="mb-2 block">
-                  <Label htmlFor="comment" value="Your message" />
-                </div>
-                <Textarea
-                  id="comment"
-                  placeholder="Describe your complaint with complete details..."
-                  required
-                  rows={4}
+                <TextInput
+                  type="text"
+                  id="sub"
+                  name="sub"
+                  value={formData.sub}
+                  onChange={handleChange}
                 />
               </div>
 
-              <Button type="submit" onSubmit={handleSubmit}>
-                Submit
-              </Button>
+              <div>
+                <div className="mb-2 block">
+                  <Label htmlFor="sub" value="Aadhar Card Number" />
+                </div>
+                <TextInput
+                  type="text"
+                  id="ACnO"
+                  name="ACnO"
+                  value={formData.ACnO}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="max-w-md">
+                <div className="mb-2 block">
+                  <Label htmlFor="sub" value="You Complaint" />
+                </div>
+                <Textarea
+                  type="text"
+                  id="comment"
+                  name="comment"
+                  value={formData.comment}
+                  onChange={handleChange}
+                />
+              </div>
+              <Button type="submit">Submit</Button>
             </form>
           </div>
 

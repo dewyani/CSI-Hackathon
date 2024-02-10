@@ -21,7 +21,7 @@ const SidebarPage = () => {
                             Statistics
                         </Sidebar.Item>
                         <Sidebar.Item href="/dashboard_Agency/timeline" icon={HiViewBoards}>
-                            Timeline
+                            Update
                         </Sidebar.Item>
                     </Sidebar.ItemGroup>
                 </Sidebar.Items>
