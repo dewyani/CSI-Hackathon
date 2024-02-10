@@ -4,10 +4,11 @@ import { FileInput, Label, Textarea } from "flowbite-react";
 import { Button, Checkbox, TextInput } from "flowbite-react";
 import { useState } from "react";
 
-const LodgeComplaints = () => {
+const LodgeComplaints = ({ register }) => {
   const [formData, setFormData] = useState({
     name: "",
-    sub: "",
+    username: "",
+    addr: "",
     ACnO: "",
     comment: "",
   });
@@ -16,9 +17,17 @@ const LodgeComplaints = () => {
     event.preventDefault();
     console.log("Form submitted with data:", formData);
     alert("Form submitted successfully !");
+    register(
+      formData.name,
+      formData.username,
+      formData.addr,
+      formData.ACnO,
+      formData.comment
+    );
   };
 
   const handleChange = (event) => {
+    // event.preventDefault();
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
@@ -50,13 +59,26 @@ const LodgeComplaints = () => {
 
               <div>
                 <div className="mb-2 block">
-                  <Label htmlFor="sub" value="Complaint Subject" />
+                  <Label htmlFor="sub" value="Complainants name" />
                 </div>
                 <TextInput
                   type="text"
-                  id="sub"
-                  name="sub"
-                  value={formData.sub}
+                  id="username"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <div className="mb-2 block">
+                  <Label htmlFor="sub" value="Address" />
+                </div>
+                <TextInput
+                  type="text"
+                  id="addr"
+                  name="addr"
+                  value={formData.addr}
                   onChange={handleChange}
                 />
               </div>
