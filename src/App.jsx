@@ -1,6 +1,6 @@
 import { Navbar } from 'flowbite-react'
 import './App.css'
-import DashboardAgency from "./components/DashboardAgency"
+import DashboardAgency from './components/DashboardAgency'
 import DashboardUser from './components/DashboardUser'
 import Signup from './components/Signup'
 import Login from './components/Login'
