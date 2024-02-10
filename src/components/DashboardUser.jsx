@@ -1,8 +1,11 @@
 import React from 'react'
+import SidebarPage from './SidebarPage'
 
 const DashboardUser = () => {
   return (
-    <div>DashboardUser</div>
+    <div>
+      <SidebarPage/>
+    </div>
   )
 }
 

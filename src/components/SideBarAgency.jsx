@@ -17,14 +17,11 @@ const SidebarPage = () => {
                 </div>
                 <Sidebar.Items>
                     <Sidebar.ItemGroup> 
-                        <Sidebar.Item href="/myComplaints" icon={HiChartPie}>
-                            My Complaints
+                        <Sidebar.Item href="/dashboard_Agency/stats" icon={HiChartPie}>
+                            Statistics
                         </Sidebar.Item>
-                        <Sidebar.Item href="/lodge" icon={HiViewBoards}>
-                            Lodge Complaints
-                        </Sidebar.Item>
-                        <Sidebar.Item href="/history" icon={HiShoppingBag}>
-                            History
+                        <Sidebar.Item href="/dashboard_Agency/timeline" icon={HiViewBoards}>
+                            Timeline
                         </Sidebar.Item>
                     </Sidebar.ItemGroup>
                 </Sidebar.Items>
