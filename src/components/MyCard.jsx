@@ -39,7 +39,7 @@ const MyCard = () => {
                     </Modal>
 
                     <div className="flex flex-wrap mx-auto justify-center">
-                        <Avatar rounded />
+                        <Avatar placeholderInitials="RR"  rounded  />
                     </div>
                 </div>
             </Card>
