@@ -24,14 +24,14 @@ const MyCard = () => {
                                     <Timeline.Point icon={HiCalendar} />
                                     <Timeline.Content>
                                         <Timeline.Time>March 2022</Timeline.Time>
-                                        <Timeline.Title>Marketing UI design in Figma</Timeline.Title>
+                                        <Timeline.Title>The complaint is under investigation </Timeline.Title>
                                     </Timeline.Content>
                                 </Timeline.Item>
                                 <Timeline.Item>
                                     <Timeline.Point icon={HiCalendar} />
                                     <Timeline.Content>
                                         <Timeline.Time>April 2022</Timeline.Time>
-                                        <Timeline.Title>E-Commerce UI code in Tailwind CSS</Timeline.Title>
+                                        <Timeline.Title>The complaint is resolved</Timeline.Title>
                                     </Timeline.Content>
                                 </Timeline.Item>
                             </Timeline>
