@@ -10,7 +10,7 @@ const Timeline = ({ comp, update }) => {
   const [buttonColor, setButtonColor] = useState("yellow");
   // const compArray = comp.comp[0];
   // console.log(compArray());
-  console.log(update());
+  // console.log(update());
 
   const handleClick = () => {
     update();
