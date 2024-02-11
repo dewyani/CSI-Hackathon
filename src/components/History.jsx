@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const History = (comp) => {
   const compArray = comp.comp[0];
-
+     console.log(compArray);
   return (
     <div className="flex">
       <SidebarPage />
