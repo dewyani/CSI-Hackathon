@@ -54,18 +54,6 @@ function App() {
     template();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchComplaints = async () => {
-  //     try {
-  //       const complaints = await state.contract.getAllComplaints();
-  //       setComplaints(complaints);
-  //     } catch (error) {
-  //       console.error("Error fetching complaints:", error);
-  //     }
-  //   };
-  //   fetchComplaints();
-  // }, []);
-
   // Function to register a complaint
   const registerComplaint = async (name, email, addr, mobile, description) => {
     try {
@@ -85,7 +73,6 @@ function App() {
       console.log("Complaint registered successfully.");
     } catch (error) {
       console.error("Error registering complaint:", error);
-      alert("Error registering complaint. Please try again later.");
     }
   };
   const fetchComplaints = async () => {
@@ -96,7 +83,6 @@ function App() {
       console.log(complaints);
     } catch (error) {
       console.error("Error fetching complaints:", error);
-      alert("Error fetching complaints. Please try again later.");
     }
   };
 
@@ -106,10 +92,9 @@ function App() {
       console.log("Complaint status updated successfully.");
     } catch (error) {
       console.error("Error updating complaint status:", error);
-      alert("Error updating complaint status. Please try again later.");
+      // alert("Error updating complaint status. Please try again later.");
     }
   };
-
   return (
     <>
       <Routes>
@@ -132,7 +117,9 @@ function App() {
         <Route path="/dashboard_Agency/stats" element={<Statistics />} />
         <Route
           path="/dashboard_Agency/timeline"
-          element={<Timeline comp={complaints} />}
+          element={
+            <Timeline comp={complaints} update={updateComplaintStatus} />
+          }
         />
       </Routes>
     </>

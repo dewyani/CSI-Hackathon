@@ -67,17 +67,18 @@ const History = (comp) => {
               <Table.Cell>September 30, 2023</Table.Cell>
             </Table.Row>
 
-            {compArray.map((item, index) => (
-              <Table.Row className=" flex flex-col bg-white dark:border-gray-700 dark:bg-gray-800">
-                <Table.Cell className="flex whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                  {item}
-                </Table.Cell>
-                <Table.Cell>{item}</Table.Cell>
-                <Table.Cell>{item}</Table.Cell>
-                <Table.Cell>{item}</Table.Cell>
-                <Table.Cell>September 30, 2023</Table.Cell>
-              </Table.Row>
-            ))}
+            {compArray &&
+              compArray.map((item, index) => (
+                <Table.Row className=" flex flex-col bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Cell className="flex whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                    {item}
+                  </Table.Cell>
+                  <Table.Cell>{item}</Table.Cell>
+                  <Table.Cell>{item}</Table.Cell>
+                  <Table.Cell>{item}</Table.Cell>
+                  <Table.Cell>September 30, 2023</Table.Cell>
+                </Table.Row>
+              ))}
           </Table.Body>
         </Table>
       </div>
