@@ -11,105 +11,105 @@ import Statistics from "./components/Statistics";
 import Timeline from "./components/Timeline";
 import { useState, useEffect } from "react";
 import abi from "./contractJson/Complaint.json";
-// import { ethers, parseUnits } from "ethers";
+import { ethers, parseUnits } from "ethers";
 
 function App() {
-  // const [state, setState] = useState({
-  //   provider: null,
-  //   signer: null,
-  //   contract: null,
-  // });
+  const [state, setState] = useState({
+    provider: null,
+    signer: null,
+    contract: null,
+  });
   const [account, setAccount] = useState("Not connected");
   const [complaints, setComplaints] = useState([]);
 
-  // useEffect(() => {
-  //   const template = async () => {
-  //     const contractAddress = "0x9158544C4d160778aa8AB003F6421365da6e64D1";
-  //     const contractABI = abi.abi;
-  //     try {
-  //       const { ethereum } = window;
-  //       const account = await ethereum.request({
-  //         method: "eth_requestAccounts",
-  //       });
-  //       setAccount(account);
-  //       const provider = new ethers.BrowserProvider(window.ethereum);
-  //       const signer = await provider.getSigner();
 
-  //       const contract = new ethers.Contract(
-  //         contractAddress,
-  //         contractABI,
-  //         signer
-  //       );
+  useEffect(() => {
+    const template = async () => {
+      const contractAddress = "0x9158544C4d160778aa8AB003F6421365da6e64D1";
+      const contractABI = abi.abi;
+      try {
+        const { ethereum } = window;
+        const account = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        setAccount(account);
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
 
-  //       window.ethereum.on("accountsChanged", () => {
-  //         window.location.reload();
-  //       });
-  //       setState({ provider, signer, contract });
-  //       fetchComplaints();
-  //     } catch (error) {
-  //       console.log("Ether error");
-  //       alert(error);
-  //     }
-  //   };
-  //   template();
-  // }, []);
+        const contract = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          signer
+        );
 
-  // // useEffect(() => {
-  // //   const fetchComplaints = async () => {
-  // //     try {
-  // //       const complaints = await state.contract.getAllComplaints();
-  // //       setComplaints(complaints);
-  // //     } catch (error) {
-  // //       console.error("Error fetching complaints:", error);
-  // //     }
-  // //   };
-  // //   fetchComplaints();
-  // // }, []);
+        window.ethereum.on("accountsChanged", () => {
+          window.location.reload();
+        });
+        setState({ provider, signer, contract });
+        fetchComplaints();
+      } catch (error) {
+        console.log("Ether error");
+        alert(error);
+      }
+    };
+    template();
+  }, []);
 
-  // // Function to register a complaint
-  // const registerComplaint = async (name, email, addr, mobile, description) => {
-  //   try {
-  //     if (!state.contract) {
-  //       console.error("Contract instance not found.");
-  //       return;
-  //     }
-  //     const transaction = await state.contract.Register(
-  //       name,
-  //       email,
-  //       addr,
-  //       mobile,
-  //       description
-  //     );
-  //     await transaction.wait();
-  //     // fetchComplaints();
-  //     console.log("Complaint registered successfully.");
-  //   } catch (error) {
-  //     console.error("Error registering complaint:", error);
-  //     alert("Error registering complaint. Please try again later.");
-  //   }
-  // };
-  // const fetchComplaints = async () => {
-  //   try {
-  //     // if (!state.contract.getAllComplaints()) {
-  //     const complaints = await state.contract.getAllComplaints();
-  //     setComplaints(complaints);
-  //     console.log(complaints);
-  //   } catch (error) {
-  //     console.error("Error fetching complaints:", error);
-  //     alert("Error fetching complaints. Please try again later.");
-  //   }
-  // };
+  useEffect(() => {
+    const fetchComplaints = async () => {
+      try {
+        const complaints = await state.contract.getAllComplaints();
+        setComplaints(complaints);
+      } catch (error) {
+        console.error("Error fetching complaints:", error);
+      }
+    };
+    fetchComplaints();
+  }, []);
 
-  // const updateComplaintStatus = async () => {
-  //   try {
-  //     await state.contract.UpdateStatus();
-  //     console.log("Complaint status updated successfully.");
-  //   } catch (error) {
-  //     console.error("Error updating complaint status:", error);
-  //     alert("Error updating complaint status. Please try again later.");
-  //   }
-  // };
+  // Function to register a complaint
+  const registerComplaint = async (name, email, addr, mobile, description) => {
+    try {
+      if (!state.contract) {
+        console.error("Contract instance not found.");
+        return;
+      }
+      const transaction = await state.contract.Register(
+        name,
+        email,
+        addr,
+        mobile,
+        description
+      );
+      await transaction.wait();
+      // fetchComplaints();
+      console.log("Complaint registered successfully.");
+    } catch (error) {
+      console.error("Error registering complaint:", error);
+      alert("Error registering complaint. Please try again later.");
+    }
+  };
+  const fetchComplaints = async () => {
+    try {
+      // if (!state.contract.getAllComplaints()) {
+      const complaints = await state.contract.getAllComplaints();
+      setComplaints(complaints);
+      console.log(complaints);
+    } catch (error) {
+      console.error("Error fetching complaints:", error);
+      alert("Error fetching complaints. Please try again later.");
+    }
+  };
 
+  const updateComplaintStatus = async () => {
+    try {
+      await state.contract.UpdateStatus();
+      console.log("Complaint status updated successfully.");
+    } catch (error) {
+      console.error("Error updating complaint status:", error);
+      alert("Error updating complaint status. Please try again later.");
+    }
+  };
 
 
   return (
@@ -128,34 +128,23 @@ function App() {
           path="/dashboard_User/history"
           element={<History />}
         />
-        {/* <Route
+        <Route
           path="/dashboard_User/myComplaints"
           element={<MyComplaints state={account} />}
-        /> */}
-        <Route
-          path="/dashboard_User/myComplaints"
-          element={<MyComplaints/>}
         />
-        {/* <Route
+
+        <Route
           path="/dashboard_User/lodge"
           element={<LodgeComplaints register={registerComplaint} />}
-        /> */}
-        <Route
-          path="/dashboard_User/lodge"
-          element={<LodgeComplaints />}
         />
+
         
         <Route path="/dashboard_Agency/stats" element={<Statistics />} />
-        {/* <Route
+        <Route
           path="/dashboard_Agency/timeline"
           element={
             <Timeline comp={complaints} update={updateComplaintStatus} />
           }
-        />
-      </Routes> */}
-      <Route
-          path="/dashboard_Agency/timeline"
-          element={<Timeline  />}
         />
       </Routes>
     </>
