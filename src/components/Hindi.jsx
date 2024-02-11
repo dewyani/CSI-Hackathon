@@ -33,7 +33,7 @@ const Login = () => {
             </h1> */}
             <div className="container mx-auto text-center pb-12">
               <h1 className="text-6xl font-bold text-gray-800 mb-4 font-hammersmith-one">
-                Welcome to SupportSync
+              सपोर्टसिंक में आपका स्वागत है
                 <br />
                 <span className="text-3xl text-blue-600">
                   <Typewriter
@@ -44,8 +44,8 @@ const Login = () => {
                     deleteSpeed={70}
                     delaySpeed={1000}
                     words={[
-                      " which effectively handles customer complaints",
-                      "Experience a new era of complaint handling",
+                      "जो ग्राहकों की शिकायतों को प्रभावी ढंग से संभालता है",
+                      "शिकायत निवारण के एक नए युग का अनुभव करें",
                     ]}
                   />
                 </span>
@@ -53,16 +53,16 @@ const Login = () => {
             </div>
 
             <p className=" mb-8 leading-relaxed text-center  w-3/4 mx-auto text-1.5rem ">
-              Every business needs an online complaint system that provides
-              multichannel capabilities, advanced reporting functionalities as
-              well as a platform for cross-functional collaboration and
-              immediate customer feedback system.
+            प्रत्येक व्यवसाय को एक ऑनलाइन शिकायत प्रणाली की आवश्यकता होती है जो प्रदान करती हो
+              मल्टीचैनल क्षमताएं, उन्नत रिपोर्टिंग कार्यक्षमताएं
+              साथ ही क्रॉस-फंक्शनल सहयोग के लिए एक मंच भी
+              तत्काल ग्राहक प्रतिक्रिया प्रणाली।
             </p>
 
             <div className="flex justify-center items-center mx-auto ">
               <Button gradientDuoTone="purpleToBlue" className="w-60 ">
                 <a href="/signup" className="nodecor text-1xl">
-                  Login
+                लॉग इन करें
                 </a>
               </Button>
             </div>
@@ -86,49 +86,49 @@ const Login = () => {
 
       <div className="flex flex-col justify-center items-center p-16 w-full bg-slate-100 ">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-5">
-          Key Features of Our Complaint Management System
+        हमारी शिकायत प्रबंधन प्रणाली की मुख्य विशेषताएं
         </h1>
         <h5 className="mb-12 text-lg">
           {" "}
-          Efficiently manage and resolve complaints with our powerful features
+          हमारी शक्तिशाली सुविधाओं के साथ शिकायतों का कुशलतापूर्वक प्रबंधन और समाधान करें
         </h5>
 
         <div className="flex gap-6 mb-8 w-10/12 pl-3">
           <Card href="#" className="w-1/2 ">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Complaint Submission
+            शिकायत प्रस्तुत करना
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Users can easily submit their compliants through the system.
+            उपयोगकर्ता सिस्टम के माध्यम से आसानी से अपनी शिकायतें जमा कर सकते हैं।
             </p>
           </Card>
 
           <Card href="#" className="w-1/2">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Complaint Tracking
+            शिकायत ट्रैकिंग
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Users can view status of thier complaints.
+            उपयोगकर्ता अपनी शिकायतों की स्थिति देख सकते हैं।
             </p>
           </Card>
         </div>
         <div className="flex gap-6 w-10/12 pl-3">
           <Card href="#" className="w-1/2 ">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Review History
+            इतिहास की समीक्षा करें
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Users can view all their previous complaints.
+            उपयोगकर्ता अपनी पिछली सभी शिकायतें देख सकते हैं।
             </p>
           </Card>
 
           <Card href="#" className="w-1/2">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Analytics and Reports
+            विश्लेषिकी और रिपोर्ट
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Generate comprehensive reports and analyze complaint data for
-              better management.
+            व्यापक रिपोर्ट तैयार करें और शिकायत डेटा का विश्लेषण करें
+              बेहतर प्रबंधन.
             </p>
           </Card>
         </div>
@@ -136,49 +136,53 @@ const Login = () => {
 
       <div className="flex flex-col justify-center items-center p-20">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-5">
-          Streamline Your Complaint Handling Process
+        अपनी शिकायत निपटान प्रक्रिया को सुव्यवस्थित करें
         </h1>
         <p className="mb-8 text-center w-8/12 mt-3">
-          Our complain management system helps businesses effectively manage and
-          resolve customer complaints. With our user-friendly platform, you can
-          easily track, prioritize, and respond to complaints, ensuring customer
-          satisfaction and loyalty.
+        हमारी शिकायत प्रबंधन प्रणाली व्यवसायों को प्रभावी ढंग से प्रबंधित करने में मदद करती है
+          ग्राहकों की शिकायतों का समाधान करें. हमारे उपयोगकर्ता-अनुकूल प्लेटफ़ॉर्म के साथ, आप ऐसा कर सकते हैं
+          ग्राहक को सुनिश्चित करते हुए शिकायतों को आसानी से ट्रैक करें, प्राथमिकता दें और प्रतिक्रिया दें
+          संतुष्टि और वफादारी.
         </p>
 
         <div className="flex flex-col justify-center items-center w-full">
           <Accordion collapseAll className="w-9/10">
             <Accordion.Panel>
               <Accordion.Title>
-                How can a complain management system benefit my customers
+              एक शिकायत प्रबंधन प्रणाली मेरे ग्राहकों को कैसे लाभ पहुंचा सकती है?
               </Accordion.Title>
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 dark:text-gray-400 max-w-prose">
-                  A complaint management system allows customers to easily
-                  submit their complaints, track the progress of their
-                  complaints, and receive timely updates on the resolution. This
-                  improves transparency and customer experience.
+                एक शिकायत प्रबंधन प्रणाली ग्राहकों को आसानी से अनुमति देती है
+                  उनकी शिकायतें दर्ज करें, उनकी प्रगति पर नज़र रखें
+                  शिकायतें, और समाधान पर समय पर अपडेट प्राप्त करें। यह
+                  पारदर्शिता और ग्राहक अनुभव में सुधार होता है।
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
               <Accordion.Title>
-                What is a complaint management system?
+              शिकायत प्रबंधन प्रणाली क्या है?
               </Accordion.Title>
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 dark:text-gray-400 max-w-prose">
-                  A complaint management system is a software tool or platform
-                  that helps agents handle and resolve customer complaints.
+                एक शिकायत प्रबंधन प्रणाली ग्राहकों को आसानी से अनुमति देती है
+                  उनकी शिकायतें दर्ज करें, उनकी प्रगति पर नज़र रखें
+                  शिकायतें, और समाधान पर समय पर अपडेट प्राप्त करें। यह
+                  पारदर्शिता और ग्राहक अनुभव में सुधार होता है।
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
               <Accordion.Title>
-                Why should anyone use a complaint management system?
+              किसी को शिकायत प्रबंधन प्रणाली का उपयोग क्यों करना चाहिए?
               </Accordion.Title>
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 dark:text-gray-400 max-w-prose">
-                  Using a complaint management system can streamline your
-                  complaint handling process and improve efficiency.
+                एक शिकायत प्रबंधन प्रणाली ग्राहकों को आसानी से अनुमति देती है
+                  उनकी शिकायतें दर्ज करें, उनकी प्रगति पर नज़र रखें
+                  शिकायतें, और समाधान पर समय पर अपडेट प्राप्त करें। यह
+                  पारदर्शिता और ग्राहक अनुभव में सुधार होता है।
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
