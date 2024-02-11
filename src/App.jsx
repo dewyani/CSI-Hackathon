@@ -3,6 +3,7 @@ import DashboardAgency from "./components/DashboardAgency";
 import DashboardUser from "./components/DashboardUser";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import Hindi from "./components/Hindi";
 import History from "./components/History";
 import { Routes, Route } from "react-router-dom";
 import MyComplaints from "./components/MyComplaints";
@@ -11,7 +12,7 @@ import Statistics from "./components/Statistics";
 import Timeline from "./components/Timeline";
 import { useState, useEffect } from "react";
 import abi from "./contractJson/Complaint.json";
-import { ethers, parseUnits } from "ethers";
+// import { ethers, parseUnits } from "ethers";
 
 function App() {
   const [state, setState] = useState({
@@ -116,6 +117,7 @@ function App() {
     <>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/loginH" element={<Hindi />} />
         <Route path="/dashboard_User" element={<DashboardUser />} />
         <Route path="/dashboard_Agency" element={<DashboardAgency />} />
         <Route path="/signup" element={<Signup />} />
