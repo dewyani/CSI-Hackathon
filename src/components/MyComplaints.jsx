@@ -17,24 +17,24 @@ const MyComplaints = (props) => {
 
       <div class="w-3/4">
         <div className="font-bold text-xl text-gray-400 m-10">
-          Current Account : jsbb/uniuggvcliddyfivfs;ozufgjv
+          Current Account : {props.state[0]}
         </div>
         <div class="flex gap-4">
-          <div class="w-1/2">
+          <div class="w-5/12">
             <div className="flex-col space-y-2">
-              <div className="font-bold text-xl text-gray-400">In Progress</div>
-              <MyCard />
-              <MyCard />
+              <div className="font-bold text-xl text-gray-400 mb-6">In Progress</div>
+              <MyCard/>
+              <MyCard/>
             </div>
           </div>
 
-          <div class="w-1/2">
+          <div class=" w-5/12 ">
             <div className="flex-col space-y-2">
-              <div className="font-bold text-xl text-gray-400">
+              <div className="font-bold text-xl text-gray-400 mb-6">
                 Resolved Sucessfully
               </div>
-              <MyCard />
-              <MyCard />
+              <MyCard/>
+              <MyCard/>
             </div>
           </div>
         </div>
