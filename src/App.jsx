@@ -54,17 +54,17 @@ function App() {
     template();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchComplaints = async () => {
-  //     try {
-  //       const complaints = await state.contract.getAllComplaints();
-  //       setComplaints(complaints);
-  //     } catch (error) {
-  //       console.error("Error fetching complaints:", error);
-  //     }
-  //   };
-  //   fetchComplaints();
-  // }, []);
+  useEffect(() => {
+    const fetchComplaints = async () => {
+      try {
+        const complaints = await state.contract.getAllComplaints();
+        setComplaints(complaints);
+      } catch (error) {
+        console.error("Error fetching complaints:", error);
+      }
+    };
+    fetchComplaints();
+  }, []);
 
   // Function to register a complaint
   const registerComplaint = async (name, email, addr, mobile, description) => {
