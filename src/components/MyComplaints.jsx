@@ -8,7 +8,7 @@ import MyCard from "./MyCard";
 
 const MyComplaints = (props) => {
   const [openModal, setOpenModal] = useState(false);
-  console.log(props.state[0]);
+  // console.log(props.state[0]);
   return (
     <div class="flex h-screen">
       <div class="w-1/4">
