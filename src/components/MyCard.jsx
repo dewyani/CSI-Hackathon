@@ -15,31 +15,31 @@ const MyCard = () => {
                     Poor customer service received at the local tax office.
                 </h5>
                 <div className='flex justify-center'>
-                    <Button className="w-20" color="success" onClick={() => setOpenModal(true)}>Updates</Button>
-                    <Modal show={openModal} onClose={() => setOpenModal(false)}>
-                        <Modal.Header>Complaint Status</Modal.Header>
+                    <Button className="w-20 bg-purple-500" onClick={() => setOpenModal(true)}>Updates</Button>
+                    <Modal show={openModal}  onClose={() => setOpenModal(false)}>
+                        <Modal.Header >Complaint Status</Modal.Header>
                         <Modal.Body>
                             <Timeline>
                                 <Timeline.Item>
                                     <Timeline.Point icon={HiCalendar} />
                                     <Timeline.Content>
                                         <Timeline.Time>March 2022</Timeline.Time>
-                                        <Timeline.Title>Marketing UI design in Figma</Timeline.Title>
+                                        <Timeline.Title>The complaint is under investigation </Timeline.Title>
                                     </Timeline.Content>
                                 </Timeline.Item>
                                 <Timeline.Item>
                                     <Timeline.Point icon={HiCalendar} />
                                     <Timeline.Content>
                                         <Timeline.Time>April 2022</Timeline.Time>
-                                        <Timeline.Title>E-Commerce UI code in Tailwind CSS</Timeline.Title>
+                                        <Timeline.Title>The complaint is resolved</Timeline.Title>
                                     </Timeline.Content>
                                 </Timeline.Item>
                             </Timeline>
                         </Modal.Body>
                     </Modal>
 
-                    <div className="flex flex-wrap mx-auto justify-center">
-                        <Avatar placeholderInitials="RR"  rounded  />
+                    <div className="flex mx-auto justify-end">
+                        <Avatar placeholderInitials="RR"  rounded/>
                     </div>
                 </div>
             </Card>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SidebarPage = () => {
     return (
-        <div>
+        <>
             <Sidebar className="h-screen border-2">
                 <div className='flex items-center m-1'>
                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
@@ -30,7 +30,7 @@ const SidebarPage = () => {
                 </Sidebar.Items>
             </Sidebar>
 
-        </div>
+        </>
     )
 }
 

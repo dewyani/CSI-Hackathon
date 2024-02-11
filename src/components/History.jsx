@@ -5,20 +5,17 @@ import { useState, useEffect } from "react";
 
 const History = (comp) => {
   const compArray = comp.comp[0];
-
+     console.log(compArray);
   return (
     <div className="flex">
       <SidebarPage />
       <div className="overflow-x-auto m-20 w-full">
-        <Table hoverable>
+        <Table hoverable className="shadow-md border-collapse border">
           <Table.Head>
-            <Table.HeadCell>Name</Table.HeadCell>
-            <Table.HeadCell>Agency</Table.HeadCell>
-            <Table.HeadCell>Description</Table.HeadCell>
-            <Table.HeadCell>Date</Table.HeadCell>
-            <Table.HeadCell>
-              <span className="sr-only">Edit</span>
-            </Table.HeadCell>
+            <Table.HeadCell className="bg-purple-400 bg-opacity-75">Name</Table.HeadCell>
+            <Table.HeadCell className="bg-purple-400 bg-opacity-75">Agency</Table.HeadCell>
+            <Table.HeadCell className="bg-purple-400 bg-opacity-75">Description</Table.HeadCell>
+            <Table.HeadCell className="bg-purple-400 bg-opacity-75">Date</Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -67,18 +64,17 @@ const History = (comp) => {
               <Table.Cell>September 30, 2023</Table.Cell>
             </Table.Row>
 
-            {compArray &&
-              compArray.map((item, index) => (
-                <Table.Row className=" flex flex-col bg-white dark:border-gray-700 dark:bg-gray-800">
-                  <Table.Cell className="flex whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                    {item}
-                  </Table.Cell>
-                  <Table.Cell>{item}</Table.Cell>
-                  <Table.Cell>{item}</Table.Cell>
-                  <Table.Cell>{item}</Table.Cell>
-                  <Table.Cell>September 30, 2023</Table.Cell>
-                </Table.Row>
-              ))}
+            {compArray && compArray.map((item, index) => (
+              <Table.Row className=" flex flex-col bg-white dark:border-gray-700 dark:bg-gray-800">
+                <Table.Cell className="flex whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                  {item}
+                </Table.Cell>
+                <Table.Cell>{item}</Table.Cell>
+                <Table.Cell>{item}</Table.Cell>
+                <Table.Cell>{item}</Table.Cell>
+                <Table.Cell>September 30, 2023</Table.Cell>
+              </Table.Row>
+            ))}
           </Table.Body>
         </Table>
       </div>
