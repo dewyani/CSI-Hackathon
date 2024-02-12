@@ -23,6 +23,7 @@ function App() {
   const [account, setAccount] = useState("Not connected");
   const [complaints, setComplaints] = useState([]);
 
+
   useEffect(() => {
     const template = async () => {
       const contractAddress = "0x9158544C4d160778aa8AB003F6421365da6e64D1";
@@ -86,6 +87,7 @@ function App() {
       console.log("Complaint registered successfully.");
     } catch (error) {
       console.error("Error registering complaint:", error);
+      alert("Error registering complaint. Please try again later.");
     }
   };
   const fetchComplaints = async () => {
@@ -96,6 +98,7 @@ function App() {
       console.log(complaints);
     } catch (error) {
       console.error("Error fetching complaints:", error);
+      alert("Error fetching complaints. Please try again later.");
     }
   };
 
@@ -105,9 +108,11 @@ function App() {
       console.log("Complaint status updated successfully.");
     } catch (error) {
       console.error("Error updating complaint status:", error);
-      // alert("Error updating complaint status. Please try again later.");
+      alert("Error updating complaint status. Please try again later.");
     }
   };
+
+
   return (
     <>
       <Routes>
@@ -116,9 +121,14 @@ function App() {
         <Route path="/dashboard_User" element={<DashboardUser />} />
         <Route path="/dashboard_Agency" element={<DashboardAgency />} />
         <Route path="/signup" element={<Signup />} />
-        <Route
+        {/* <Route
           path="/dashboard_User/history"
           element={<History comp={complaints} />}
+        /> */}
+
+<Route
+          path="/dashboard_User/history"
+          element={<History />}
         />
         <Route
           path="/dashboard_User/myComplaints"

@@ -5,6 +5,8 @@ import { Button, Modal, Timeline } from "flowbite-react";
 import { useState } from "react";
 import { HiArrowNarrowRight, HiCalendar } from "react-icons/hi";
 import MyCard from "./MyCard";
+import { Rating } from 'flowbite-react';
+import StarRating from "./Feedback";
 
 const MyComplaints = (props) => {
   const [openModal, setOpenModal] = useState(false);
@@ -17,7 +19,7 @@ const MyComplaints = (props) => {
 
       <div class="w-3/4">
         <div className="font-bold text-xl text-gray-400 m-10">
-          Current Account : {props.state[0]}
+          {/* Current Account : {props.state[0]} */}
         </div>
         <div class="flex gap-4">
           <div class="w-5/12">
@@ -37,6 +39,14 @@ const MyComplaints = (props) => {
               <MyCard/>
             </div>
           </div>
+        </div>
+
+        <div>
+           
+      
+      <StarRating/>
+
+
         </div>
       </div>
     </div>
