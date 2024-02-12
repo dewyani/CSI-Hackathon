@@ -1,9 +1,21 @@
-# React + Vite
+# CSI HACKATHON '24
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- speedrun on learning blockchain from scratch + making a website on it in under 24 hrs 
+## Team Members :
 
-Currently, two official plugins are available:
+| Name | Role | 
+| -- | -- |
+|Apulki | Captain | 
+|Priyanka | Supreme Leader | 
+|Neerja | Pizza Order Plzzz | 
+|Dewyani | Chart.js expert | 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Hackathon
+
+
+# Tech Stack : 
+## Frontend : 
+- React + Tailwind CSS
+
+## BlockChain 
+
+ - Solidity + Gananche  + Meta Mask
