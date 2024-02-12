@@ -2,6 +2,8 @@ import React from "react";
 import Login_Navbar from "./Login_Navbar";
 import login from "../images/login.jpg";
 import { Footer } from "flowbite-react";
+import { useNavigate } from 'react-router-dom';
+
 import {
   BsDribbble,
   BsFacebook,
@@ -16,10 +18,17 @@ import { Accordion } from "flowbite-react";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 
 const Login = () => {
+
+  const history = useNavigate();
+
+  const handleClick = () => {
+    // Navigate to a new page
+    history('/loginH');
+  };
   return (
     <>
       {/* <Login_Navbar/> */}
-      <div className="flex-end p-10" href="/loginH" >
+      <div className="flex-end p-10" onClick={handleClick}>
         <svg class="w-20 h-10 text-blue-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.5A2.5 2.5 0 0 1 7.5 20h0a2.5 2.5 0 0 1-2.4-3.2 3 3 0 0 1-.8-5.2 2.5 2.5 0 0 1 .9-3.2A2.5 2.5 0 0 1 7 5a2.5 2.5 0 0 1 5 .5m0 13v-13m0 13a2.5 2.5 0 0 0 4.5 1.5h0a2.5 2.5 0 0 0 2.4-3.2 3 3 0 0 0 .9-5.2 2.5 2.5 0 0 0-1-3.2A2.5 2.5 0 0 0 17 5a2.5 2.5 0 0 0-5 .5m-8 5a2.5 2.5 0 0 1 3.5-2.3m-.3 8.6a3 3 0 0 1-3-5.2M20 10.5a2.5 2.5 0 0 0-3.5-2.3m.3 8.6a3 3 0 0 0 3-5.2" />
         </svg>

@@ -5,7 +5,9 @@ import { useState, useEffect } from "react";
 
 const History = (comp) => {
   const compArray = comp.comp[0];
-     console.log(compArray);
+  if(compArray){
+    console.log(compArray);
+  }
   return (
     <div className="flex">
       <SidebarPage />
@@ -63,6 +65,7 @@ const History = (comp) => {
               </Table.Cell>
               <Table.Cell>September 30, 2023</Table.Cell>
             </Table.Row>
+
 
             {compArray && compArray.map((item, index) => (
               <Table.Row className=" flex flex-col bg-white dark:border-gray-700 dark:bg-gray-800">
